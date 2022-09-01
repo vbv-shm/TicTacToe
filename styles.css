@@ -1,0 +1,33 @@
+gamegrid{
+    display: grid;
+    gap: 10px;
+    grid-template: 150px 150px 150px/150px 150px 150px;
+    background-color: blueviolet;
+    width: 470px;
+    margin-left: 500px;
+    margin-top: 60px;
+    height: 470px;
+}
+h1{
+    margin-left: 530px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(1, 2, 34);
+}
+ca,cb,cc,cd,ce,cf,cg,ch,ci{
+    width:150px;
+    height:150px;
+    background-color: rgb(223, 241, 187);
+    font-size: 120px;
+    text-align:center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(199, 246, 248);
+    color: blueviolet;
+    
+}
+ca:hover,cb:hover,cc:hover,cd:hover,ce:hover,cf:hover,cg:hover,ch:hover,ci:hover{
+    background-color: aqua;
+    
+}
+body{
+    background-color: blueviolet;
+}
