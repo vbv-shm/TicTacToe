@@ -5,15 +5,38 @@ gamegrid{
     background-color: blueviolet;
     width: 470px;
     margin-left: 520px;
-    margin-top: 60px;
+    margin-top: 200px;
     height: 470px;
 }
 h1{
-
+    top:50px;
+    left:510px;
+    position:fixed;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: blueviolet;
     background-color: aqua;
     text-align: center;
+    width: 500px;
+    height: 60px;
+}
+mdata{
+    position:fixed;
+    top:250px;
+    left:110px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: aqua;
+    color: blueviolet;
+    font-size: 50px;
+}
+resultdata{
+    position:fixed;
+    top:250px;
+    /* right:110px; */
+    left: 1100px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+    background-color: aqua;
+    color: blueviolet;
+    font-size: 50px;
 }
 ca,cb,cc,cd,ce,cf,cg,ch,ci{
     width:150px;

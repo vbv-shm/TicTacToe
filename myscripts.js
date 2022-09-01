@@ -22,7 +22,7 @@ function addSymbol(){
     console.log(this.tagName);
     if(xORo=="X"){var s=3;}else {s=5};
     if(this.tagName=='CA' ){score[0]=s;}
-    else if (this.tagName=='CB' ){score[1]=s;}
+    else if(this.tagName=='CB' ){score[1]=s;}
     else if(this.tagName=='CC' ){score[2]=s;}
     else if(this.tagName=='CD' ){score[3]=s;}
     else if(this.tagName=='CE' ){score[4]=s;}
@@ -34,8 +34,10 @@ function addSymbol(){
 }
     
 function checkScore(){
-    if(score[0]+score[1]+score[2]==9||score[3]+score[4]+score[5]==9||score[6]+score[7]+score[8]==9||score[0]+score[3]+score[6]==9||score[1]+score[4]+score[7]==9||score[2]+score[5]+score[8]==9||score[0]+score[4]+score[8]==9||score[2]+score[4]+score[6]==9){ console.log("Player 1 won.")}
-    else if(score[0]+score[1]+score[2]==15||score[3]+score[4]+score[5]==15||score[6]+score[7]+score[8]==15||score[0]+score[3]+score[6]==15||score[1]+score[4]+score[7]==15||score[2]+score[5]+score[8]==15||score[0]+score[4]+score[8]==15||score[2]+score[4]+score[6]==15){console.log("Player 2 won.")}
+    if(score[0]+score[1]+score[2]==9||score[3]+score[4]+score[5]==9||score[6]+score[7]+score[8]==9||score[0]+score[3]+score[6]==9||score[1]+score[4]+score[7]==9||score[2]+score[5]+score[8]==9||score[0]+score[4]+score[8]==9||score[2]+score[4]+score[6]==9){ document.getElementsByTagName('resultdata')[0].innerText="Player 2 won! Press Restart for another game"}
+    else if(score[0]+score[1]+score[2]==15||score[3]+score[4]+score[5]==15||score[6]+score[7]+score[8]==15||score[0]+score[3]+score[6]==15||score[1]+score[4]+score[7]==15||score[2]+score[5]+score[8]==15||score[0]+score[4]+score[8]==15||score[2]+score[4]+score[6]==15){document.getElementsByTagName('resultdata')[0].innerText="Player 1 won! Press Restart for another game"}
+    if(score[0]+score[1]+score[2]+score[3]+score[4]+score[5]+score[6]+score[7]+score[8]>34){document.getElementsByTagName('resultdata')[0].innerText="Match is draw! Press Restart for another game"}
+    
 }
 }
 const player = (name) => {
@@ -53,6 +55,8 @@ function restart(){
     document.getElementsByTagName('ch')[0].innerText="";
     document.getElementsByTagName('ci')[0].innerText="";
     for(var i=0;i<9;i++){score[i]=0};
+    document.getElementsByTagName('resultdata')[0].innerText="Game is on!";
+    xORo="X";
 }
 document.getElementsByTagName('button')[0].addEventListener('click', restart);
 var score=[0,0,0,0,0,0,0,0,0];
