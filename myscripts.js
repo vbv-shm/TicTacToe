@@ -7,15 +7,6 @@ function convert(){
         xORo="X";
     }
 }
-document.getElementsByTagName('ca')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('cb')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('cc')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('cd')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('ce')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('cf')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('cg')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('ch')[0].addEventListener('click', addSymbol);
-document.getElementsByTagName('ci')[0].addEventListener('click', addSymbol);
 
 function addSymbol(){
     if (this.innerText===""){this.innerText=xORo;convert();
@@ -32,14 +23,38 @@ function addSymbol(){
     else if(this.tagName=='CI' ){score[8]=s;};
     checkScore();
 }
-    
+}
 function checkScore(){
-    if(score[0]+score[1]+score[2]==9||score[3]+score[4]+score[5]==9||score[6]+score[7]+score[8]==9||score[0]+score[3]+score[6]==9||score[1]+score[4]+score[7]==9||score[2]+score[5]+score[8]==9||score[0]+score[4]+score[8]==9||score[2]+score[4]+score[6]==9){ document.getElementsByTagName('resultdata')[0].innerText="Player 2 won! Press Restart for another game"}
-    else if(score[0]+score[1]+score[2]==15||score[3]+score[4]+score[5]==15||score[6]+score[7]+score[8]==15||score[0]+score[3]+score[6]==15||score[1]+score[4]+score[7]==15||score[2]+score[5]+score[8]==15||score[0]+score[4]+score[8]==15||score[2]+score[4]+score[6]==15){document.getElementsByTagName('resultdata')[0].innerText="Player 1 won! Press Restart for another game"}
-    else if(score[0]+score[1]+score[2]+score[3]+score[4]+score[5]+score[6]+score[7]+score[8]>34){document.getElementsByTagName('resultdata')[0].innerText="Match is draw! Press Restart for another game"}
+    let x=false;
+    if(score[0]+score[1]+score[2]==9||score[3]+score[4]+score[5]==9||score[6]+score[7]+score[8]==9||score[0]+score[3]+score[6]==9||score[1]+score[4]+score[7]==9||score[2]+score[5]+score[8]==9||score[0]+score[4]+score[8]==9||score[2]+score[4]+score[6]==9){ document.getElementsByTagName('resultdata')[0].innerText="Player 2 won! Press Restart for another game";removeEventListeners()}
+    else if(score[0]+score[1]+score[2]==15||score[3]+score[4]+score[5]==15||score[6]+score[7]+score[8]==15||score[0]+score[3]+score[6]==15||score[1]+score[4]+score[7]==15||score[2]+score[5]+score[8]==15||score[0]+score[4]+score[8]==15||score[2]+score[4]+score[6]==15){document.getElementsByTagName('resultdata')[0].innerText="Player 1 won! Press Restart for another game";removeEventListeners()}
+    else if(score[0]+score[1]+score[2]+score[3]+score[4]+score[5]+score[6]+score[7]+score[8]>34){document.getElementsByTagName('resultdata')[0].innerText="Match is draw! Press Restart for another game";removeEventListeners()}
     
 }
+
+function addEventListeners(){
+    document.getElementsByTagName('ca')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('cb')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('cc')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('cd')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('ce')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('cf')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('cg')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('ch')[0].addEventListener('click', addSymbol);
+    document.getElementsByTagName('ci')[0].addEventListener('click', addSymbol);
 }
+function removeEventListeners(){
+document.getElementsByTagName('ca')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('cb')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('cc')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('cd')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('ce')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('cf')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('cg')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('ch')[0].removeEventListener('click', addSymbol);
+document.getElementsByTagName('ci')[0].removeEventListener('click', addSymbol);
+}
+
 const player = (name) => {
     const sayHello = () => console.log('hello!');
     return { name, age, sayHello };
@@ -54,9 +69,11 @@ function restart(){
     document.getElementsByTagName('cg')[0].innerText="";
     document.getElementsByTagName('ch')[0].innerText="";
     document.getElementsByTagName('ci')[0].innerText="";
+    addEventListeners()
     for(var i=0;i<9;i++){score[i]=0};
     document.getElementsByTagName('resultdata')[0].innerText="Game is on!";
     xORo="X";
 }
 document.getElementsByTagName('button')[0].addEventListener('click', restart);
 var score=[0,0,0,0,0,0,0,0,0];
+addEventListeners();
