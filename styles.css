@@ -84,10 +84,11 @@ ca,cb,cc,cd,ce,cf,cg,ch,ci{
 }
 ca:hover,cb:hover,cc:hover,cd:hover,ce:hover,cf:hover,cg:hover,ch:hover,ci:hover{
     background-color: aqua;
+    cursor: pointer;
     
 }
 body{
-    background-color: blueviolet;
+    background-image:  linear-gradient(to right, white 0% 5% , blueviolet 5% 95%,white 95% 100%);
 }
 button{
     width: 100px;
@@ -99,6 +100,9 @@ button{
     border: 0px;
     display: block;
     margin-top: 1%;
+}
+button:hover{
+    background-color:rgb(223, 241, 187);;
 }
 restart{
     margin: auto;

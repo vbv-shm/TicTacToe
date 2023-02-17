@@ -74,6 +74,10 @@ function restart(){
     document.getElementsByTagName('resultdata')[0].innerText="Game is on!";
     xORo="X";
 }
+
+function colorWinningTiles(){
+    if(score[0]+score[1]+score[2]==9||score[3]+score[4]+score[5]==9||score[6]+score[7]+score[8]==9||score[0]+score[3]+score[6]==9||score[1]+score[4]+score[7]==9||score[2]+score[5]+score[8]==9||score[0]+score[4]+score[8]==9||score[2]+score[4]+score[6]==9){ document.getElementsByTagName('resultdata')[0].innerHTML="Player 2 won! Press Restart for another game";removeEventListeners()}
+}
 document.getElementsByTagName('button')[0].addEventListener('click', restart);
 var score=[0,0,0,0,0,0,0,0,0];
 addEventListeners();
