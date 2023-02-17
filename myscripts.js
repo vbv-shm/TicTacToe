@@ -1,4 +1,5 @@
 var xORo="X";
+globalWinningID=[]
 function convert(){
     if (xORo=="X"){
         xORo="O";
@@ -71,24 +72,11 @@ function restart(){
     document.getElementsByTagName('cg')[0].innerText="";
     document.getElementsByTagName('ch')[0].innerText="";
     document.getElementsByTagName('ci')[0].innerText="";
-    document.getElementsByTagName('ca')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('cb')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('cc')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('cd')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('ce')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('cf')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('cg')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('ch')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('ci')[0].style.backgroundColor="rgb(199, 246, 248)";
-    document.getElementsByTagName('ca')[0].style.color="blueviolet";
-    document.getElementsByTagName('cb')[0].style.color="blueviolet";
-    document.getElementsByTagName('cc')[0].style.color="blueviolet";
-    document.getElementsByTagName('cd')[0].style.color="blueviolet";
-    document.getElementsByTagName('ce')[0].style.color="blueviolet";
-    document.getElementsByTagName('cf')[0].style.color="blueviolet";
-    document.getElementsByTagName('cg')[0].style.color="blueviolet";
-    document.getElementsByTagName('ch')[0].style.color="blueviolet";
-    document.getElementsByTagName('ci')[0].style.color="blueviolet";
+
+    globalWinningID.forEach((winningId)=>{
+        document.getElementById("block"+winningId).classList.remove("winningClass")
+    })
+    globalWinningID=[]
     addEventListeners()
     for(var i=0;i<9;i++){score[i]=0};
     document.getElementsByTagName('resultdata')[0].innerText="Game is on!";
@@ -102,9 +90,12 @@ function colorWinningTiles(){
         if(score[winningArray[0]]+score[winningArray[1]]+score[winningArray[2]]==9||score[winningArray[0]]+score[winningArray[1]]+score[winningArray[2]]==15){
             console.log("here")
             winningArray.forEach((winningId)=>{
-                console.log(document.getElementById("block"+winningId));
-                document.getElementById("block"+winningId).style.color="black"
-                document.getElementById("block"+winningId).style.backgroundColor="pink"
+                
+                // document.getElementById("block"+winningId).style.color="black"
+                // document.getElementById("block"+winningId).style.backgroundColor="pink"
+                console.log("here");
+                document.getElementById("block"+winningId).classList.add("winningClass")
+                globalWinningID.push(winningId)
             })
         }}
 

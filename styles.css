@@ -88,7 +88,7 @@ ca:hover,cb:hover,cc:hover,cd:hover,ce:hover,cf:hover,cg:hover,ch:hover,ci:hover
     
 }
 body{
-    background-image:  linear-gradient(to right, white 0% 5% , blueviolet 5% 95%,white 95% 100%);
+    background-image:  linear-gradient(to right, white 0% 5% , rgb(153, 60, 240) 5% 95%,white 95% 100%);
 }
 button{
     width: 100px;
@@ -100,6 +100,7 @@ button{
     border: 0px;
     display: block;
     margin-top: 1%;
+    border-radius: 5px;
 }
 button:hover{
     background-color:rgb(223, 241, 187);;
@@ -109,5 +110,13 @@ restart{
     display: block;
     text-shadow: 0.4px 0.4px 2px #0b8893;
     
+    
+}
+
+.winningClass {
+    background-color: rgb(243, 168, 180) !important;
+    color: black !important;
+    transition: background-color 3s;
+    transition: color 3s;
 }
 
